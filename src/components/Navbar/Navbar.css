@@ -1,0 +1,9 @@
+nav{
+    background: #6d624f;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

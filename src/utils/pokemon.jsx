@@ -1,11 +1,13 @@
 export const getAllPokemon = (url) => {
-    return fetch(url)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data) => console.log(data))
-        .catch((error) => console.log('There was a problem with the fetch operation: ' + error.message));
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => resolve(data));
+    })
+}
+
+export const getPokemon = (url) => {
+    return new Promise((resolve, reject) => {
+        fetch(url).then(res => res.json()).then(data =>resolve(data))
+    });
 };
